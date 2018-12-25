@@ -1,4 +1,4 @@
-pipeline {
+node {
     def app
 
     stage('Clone repository') {
@@ -11,7 +11,7 @@ pipeline {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("getintodevops/hellonode")
+        app = docker.build("idan1281/hellonode")
     }
 
     stage('Test image') {
