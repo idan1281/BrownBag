@@ -33,7 +33,9 @@ node {
             app.push("latest")
         }
     }
-    stage ('Run_docker') {
-        sh "ssh -i /var/lib/jenkins/.ssh/Idan_Main-Ireland.pem ec2-user@172.31.24.241 docker run -p 8000:8000 idan1281/brownbag"
+    stage ('pull image') {
+        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
+        docker.image('httpd').withRun('-p 8080:8000')
+}
 }
 }
