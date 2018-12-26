@@ -33,5 +33,4 @@ node {
             app.push("latest")
         }
     }
-    build job: 'deploy_docker', parameters: [[$class: 'StringParameterValue', name: 'idan', value: "idan1281/brownbag"]]
 }
