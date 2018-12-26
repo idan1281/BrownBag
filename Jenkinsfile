@@ -34,6 +34,6 @@ node {
         }
     }
     stage ('pull image') {
-        docker.image('httpd').withRun('-p 8080:80') 
+        docker.image('httpd').run
 }
 }
