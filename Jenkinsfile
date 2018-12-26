@@ -38,3 +38,4 @@ node {
     sh "curl -i http://${hostIp(c)}:8080/"
   }
 }
+}
