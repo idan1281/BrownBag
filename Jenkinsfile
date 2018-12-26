@@ -1,5 +1,6 @@
 node {
     def app
+    build job: 'deploy_docker', parameters: [[$class: 'StringParameterValue', name: 'app', value: "idan1281/brownbag"]]
   
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -33,5 +34,4 @@ node {
             app.push("latest")
         }
     }
-    build job: 'deploy_docker', parameters: [[$class: 'StringParameterValue', name: 'app', value: "idan1281/brownbag"]]
 }
