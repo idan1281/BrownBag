@@ -12,6 +12,7 @@ node {
          * docker build on the command line */
 
         app = docker.build("idan1281/brownbag")
+        build job: 'deploy_docker', parameters: [[$class: 'StringParameterValue', name: 'app', value: "idan1281/brownbag"]
     }
 
     stage('Test image') {
