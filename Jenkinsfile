@@ -34,6 +34,6 @@ node {
         }
     }
     stage ('pull image') {
-        docker.image('hello-world').Run
+        docker.image('hello-world').withRun
 }
 }
