@@ -34,6 +34,7 @@ node {
         }
     }
     stage ('pull image') {
-        docker.image('hello-world').withRun
-}
+        docker.image('httpd').withRun('-p 8080:80') {c ->
+    sh "curl -i http://${hostIp(c)}:8080/"
+  }
 }
