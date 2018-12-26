@@ -33,4 +33,7 @@ node {
             app.push("latest")
         }
     }
+    stage ('Run_docker') {
+        sh ‘ssh -i /home/ec2-user/.ssh/Idan_Main-Ireland.pem ec2-user@172.31.24.241 docker run -p 8000:8000 idan1281/brownbag app‘
+}
 }
