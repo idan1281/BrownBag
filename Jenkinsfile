@@ -38,5 +38,6 @@ node {
              docker.image('idan1281/brownbag').withRun('-p 8080:80') {c ->
              sh "curl -i http://${hostIp(c)}:8080/"
   } 
+        }
 }
 }
