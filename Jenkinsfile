@@ -34,6 +34,9 @@ node {
         }
     }
     stage ('pull image') {
-        docker.run('httpd')
+        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
+             docker.image('idan1281/brownbag').withRun('-p 8080:80') {c ->
+             sh "curl -i http://${hostIp(c)}:8080/"
+  } 
 }
 }
