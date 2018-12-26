@@ -37,4 +37,5 @@ node {
         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
             sh "docker run -it -p 8000:8000 idan1281/brownbag"
         }
+    }
 }
